@@ -15,7 +15,6 @@ import HomeMainFooter from "@/layouts/footers/HomeMainFooter";
 import HomeMainAbout from "@/components/about/HomeMainAbout";
 import HomeMainHeader from "@/layouts/headers/HomeMainHeader";
 import HomeMainWork from "@/components/work/HomeMainWork";
-import CreativeAgencyService from "@/components/service/CreativeAgencyService";
 
 const HomeMain = () => {
   return (
@@ -38,12 +37,11 @@ const HomeMain = () => {
                 <HomeMainTextSlider />
                 <HomeMainService />
                 <HomeMainVideo />
-                <CreativeAgencyService />
                 <HomeMainProject />
-                {/* <HomeMainFunFact /> */}
+                <HomeMainFunFact />
                 <HomeMainWork />
                 <HomeMainTestimonial />
-                {/* <ModernAgencyAward /> */}
+                <ModernAgencyAward />
               </main>
               <HomeMainFooter />
             </div>

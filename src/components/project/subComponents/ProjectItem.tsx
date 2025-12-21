@@ -1,15 +1,19 @@
-"use client"
-import { projectsData } from '@/data/projectData';
-import { useHoverEffect } from '@/hooks/useHoverEffect';
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import { projectsData } from "@/data/projectData";
+import { useHoverEffect } from "@/hooks/useHoverEffect";
+import Image from "next/image";
+import Link from "next/link";
 
 const ProjectItem = () => {
   const { addToRefs } = useHoverEffect();
 
-// Split projects into two columns
-  const leftColumnProjects = projectsData.slice(0,6).filter((_, index) => index % 2 === 0);
-  const rightColumnProjects = projectsData.slice(0,6).filter((_, index) => index % 2 !== 0);
+  // Split projects into two columns
+  const leftColumnProjects = projectsData
+    .slice(0, 6)
+    .filter((_, index) => index % 2 === 0);
+  const rightColumnProjects = projectsData
+    .slice(0, 6)
+    .filter((_, index) => index % 2 !== 0);
 
   return (
     <div className="row gx-135">
@@ -39,18 +43,17 @@ const ProjectItem = () => {
 };
 
 interface ProjectCardProps {
-  project: typeof projectsData[0];
+  project: (typeof projectsData)[0];
   addToRefs: (el: HTMLDivElement | null) => void;
 }
 
 const ProjectCard = ({ project, addToRefs }: ProjectCardProps) => {
-
   return (
-    <div
-      className="tp-project-item mb-95 tp--hover-item"
-      ref={addToRefs}
-    >
-      <div className="tp-project-thumb not-hide-cursor" data-cursor="View<br>Demo">
+    <div className="tp-project-item mb-95 tp--hover-item" ref={addToRefs}>
+      <div
+        className="tp-project-thumb not-hide-cursor"
+        data-cursor="View<br>Demo"
+      >
         <Link
           className="cursor-hide tp--hover-img"
           data-displacement="assets/img/webgl/1.jpg"
