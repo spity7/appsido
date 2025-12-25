@@ -7,7 +7,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function NavMenus() {
-  const [hoveredMenu, setHoveredMenu] = useState<number | null>(headerMenuData[0]?.id || null);
+  const [hoveredMenu, setHoveredMenu] = useState<number | null>(
+    headerMenuData[0]?.id || null
+  );
 
   // Renders nested submenus
   const renderSubmenu = (submenus: Submenu[] = []) => {
@@ -25,9 +27,7 @@ export default function NavMenus() {
 
       return (
         <li key={i}>
-          <Link href={submenu.link || "#"}>
-            {submenu.title}
-          </Link>
+          <Link href={submenu.link || "#"}>{submenu.title}</Link>
         </li>
       );
     });
@@ -36,10 +36,14 @@ export default function NavMenus() {
   // Returns CSS class based on tag like 'Popular', 'Trending', or 'Hot'
   const getTagClass = (tag: string) => {
     switch (tag) {
-      case 'Popular': return 'pop';
-      case 'Trending': return 'new';
-      case 'Hot': return 'hot';
-      default: return '';
+      case "Popular":
+        return "pop";
+      case "Trending":
+        return "new";
+      case "Hot":
+        return "hot";
+      default:
+        return "";
     }
   };
 
@@ -48,23 +52,24 @@ export default function NavMenus() {
       {headerMenuData.map((menu) => (
         <li
           key={menu.id}
-          className={`has-dropdown ${menu.megaMenu || menu.smallMenu || menu.mediumMenu ? "p-static" : ""
-            } ${hoveredMenu === menu.id ? 'active' : ''}`}
-
+          className={` ${
+            menu.megaMenu || menu.smallMenu || menu.mediumMenu ? "p-static" : ""
+          } ${hoveredMenu === menu.id ? "active" : ""}`}
           onMouseEnter={() => setHoveredMenu(menu.id)}
           onMouseLeave={() => setHoveredMenu(null)}
         >
           <Link href={menu.link}>
             {menu.title}
-            {menu.pluseIncon && (
-              <span className="dropdown-btn"></span>
-            )}
+            {menu.pluseIncon && <span className="dropdown-btn"></span>}
           </Link>
 
           {menu.megaMenu || menu.smallMenu || menu.mediumMenu ? (
-            <div className={`tp-megamenu-wrapper ${menu.smallMenu ? "megamenu-small" : ""} mega-menu megamenu-white-bg`}>
+            <div
+              className={`tp-megamenu-wrapper ${
+                menu.smallMenu ? "megamenu-small" : ""
+              } mega-menu megamenu-white-bg`}
+            >
               <div className="row gx-0">
-
                 {menu.megaMenu &&
                   menu?.submenus?.map((submenu: Submenu, i: number) => (
                     <div key={i} className="col-xl-3">
@@ -79,7 +84,9 @@ export default function NavMenus() {
                                 <ThemeLink href={item.link}>
                                   {item.title}
                                   {item.tag && (
-                                    <span className={getTagClass(item.tag)}>{item.tag}</span>
+                                    <span className={getTagClass(item.tag)}>
+                                      {item.tag}
+                                    </span>
                                   )}
                                 </ThemeLink>
                               </li>
@@ -104,7 +111,9 @@ export default function NavMenus() {
                                 <ThemeLink href={item.link}>
                                   {item.title}
                                   {item.tag && (
-                                    <span className={getTagClass(item.tag)}>{item.tag}</span>
+                                    <span className={getTagClass(item.tag)}>
+                                      {item.tag}
+                                    </span>
                                   )}
                                 </ThemeLink>
                               </li>
@@ -122,7 +131,9 @@ export default function NavMenus() {
                         <div key={i} className="col-xl-3">
                           <div className="tp-megamenu-list">
                             {submenu.title && (
-                              <h4 className="tp-megamenu-title">{submenu.title}</h4>
+                              <h4 className="tp-megamenu-title">
+                                {submenu.title}
+                              </h4>
                             )}
 
                             {submenu.megaMenu && (
@@ -132,7 +143,9 @@ export default function NavMenus() {
                                     <ThemeLink href={item.link}>
                                       {item.title}
                                       {item.tag && (
-                                        <span className={getTagClass(item.tag)}>{item.tag}</span>
+                                        <span className={getTagClass(item.tag)}>
+                                          {item.tag}
+                                        </span>
                                       )}
                                     </ThemeLink>
                                   </li>
@@ -163,7 +176,6 @@ export default function NavMenus() {
                 )}
               </div>
             </div>
-
           ) : menu.submenus ? (
             <ul className="tp-submenu submenu">
               {renderSubmenu(menu.submenus)}

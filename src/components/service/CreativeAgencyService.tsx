@@ -12,7 +12,7 @@ const CreativeAgencyService = () => {
               <div className="col-xl-9">
                 <div className="studio-service-title-box mb-90">
                   <span className="tp-section-subtitle-clash clash-subtitle-pos">
-                    Our <br /> Services
+                    Our <br /> Projects
                     <i>
                       <ArrowTwo />
                     </i>

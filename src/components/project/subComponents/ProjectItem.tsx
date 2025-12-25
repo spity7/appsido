@@ -9,10 +9,10 @@ const ProjectItem = () => {
 
   // Split projects into two columns
   const leftColumnProjects = projectsData
-    .slice(0, 6)
+    .slice(0, 4)
     .filter((_, index) => index % 2 === 0);
   const rightColumnProjects = projectsData
-    .slice(0, 6)
+    .slice(0, 4)
     .filter((_, index) => index % 2 !== 0);
 
   return (

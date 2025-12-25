@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 // Import Swiper components and Autoplay, FreeMode module
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,35 +6,39 @@ import { Autoplay, FreeMode } from "swiper/modules";
 
 // Slide data array
 const slideData = [
-  "UI Design",
-  "Design Agency",
-  "Strategy",
-  "Digital Solution",
-  "Business Growth",
-  "Development",
-  "IT Company",
-  "SEO Agency",
-  "Consulting",
-  "Branding",
-  "Lifetime Update",
-  "UI Design",
-  "Design Agency",
-  "Strategy",
-  "Digital Solution",
-  "Business Growth",
-  "Strategy",
-  "Digital Solution",
-  "Business Growth",
-  "Development",
-  "IT Company",
-  "SEO Agency"
+  "Web Services",
+  "App Services",
+  "AI Services",
+  "IT Services",
+  "E-Commerce Solutions",
+  "Web Services",
+  "App Services",
+  "AI Services",
+  "IT Services",
+  "E-Commerce Solutions",
+  // "Development",
+  // "IT Company",
+  // "SEO Agency",
+  // "Consulting",
+  // "Branding",
+  // "Lifetime Update",
+  // "UI Design",
+  // "Design Agency",
+  // "Strategy",
+  // "Digital Solution",
+  // "Business Growth",
+  // "Strategy",
+  // "Digital Solution",
+  // "Business Growth",
+  // "Development",
+  // "IT Company",
+  // "SEO Agency",
 ];
 
-const HomeMainTextSlider = (
-  {
-    bgColor = "red-bg-2",
-    titleCls = "tp-text-slide-title"
-  }) => {
+const HomeMainTextSlider = ({
+  bgColor = "red-bg-2",
+  titleCls = "tp-text-slide-title",
+}) => {
   return (
     <div className="tp-text-slide-area">
       <div className={`tp-text-slide-wrapper ${bgColor}`}>
