@@ -1,14 +1,12 @@
-import AboutModernMain from '@/pages/about/about-modern/AboutModernMain';
-import { Metadata } from 'next';
+import AboutModernMain from "@/pages/about/about-modern/AboutModernMain";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Agntix - About Modern light",
+  title: "Appsido - About Us",
 };
 
 const page = () => {
-    return (
-            <AboutModernMain/>
-    );
+  return <AboutModernMain />;
 };
 
 export default page;
